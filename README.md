@@ -7,7 +7,7 @@
 1. Clone this repo
 2. Start Ocean node
 ```bash
-cd config/docker
+cd config/testnet/docker
 docker-compose -p cbt up -d
 ```
 
