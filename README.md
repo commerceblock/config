@@ -14,7 +14,7 @@ docker-compose -p cbt up -d
 ### Method 2 - binaries
 
 0. Download and install binaries from:
-```https://github.com/commerceblock/ocean/releases```
+https://github.com/commerceblock/ocean/releases
 1. Clone this repo
 2. Start Ocean node
 ```bash
