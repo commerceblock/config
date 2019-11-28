@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec oceand -printtoconsole -datadir=ocean
+exec oceand -printtoall -datadir=ocean

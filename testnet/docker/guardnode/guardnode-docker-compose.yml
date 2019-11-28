@@ -1,6 +1,20 @@
 ---
 version: '3.6'
 services:
+  guardnode:
+    image: commerceblock/guardnode:latest
+    volumes:
+      - datadir:/home/bitcoin/.bitcoin
+    command: >-
+        python3 -m guardnode
+        --rpcuser ${OCEAN_RPC_USER:-ocean}
+        --rpcpassword ${OCEAN_RPC_PASSWORD:-password}
+        --rpcconnect ocean
+        --rpcport 7043
+        --bidpubkey
+        --challengehost https://coordinator.testnet.commerceblock.com:10005
+        --bidtxid
+        --nodelogfile /home/bitcoin/.bitcoin/ocean_test/debug.log
   ocean:
     image: commerceblock/ocean:dfd627dca
     networks:
@@ -33,17 +47,3 @@ services:
         -contractintx=1
         -genesistimestamp=1568700000
         -attestationhash=862244710b778def8209ca90be7d697c686d595da4b90acdf6d2f844da1bfd28
-  guardnode:
-    image: commerceblock/guardnode:latest
-    volumes:
-    - ../datadir:/home/bitcoin/.bitcoin
-    command: >-
-      python3 -m guardnode
-      --rpcuser ${OCEAN_RPC_USER:-ocean}
-      --rpcpassword ${OCEAN_RPC_PASSWORD:-oceanpass}
-      --rpcconnect ocean
-      --rpcport 8332
-      --challengehost https://coordinator.testnet.commerceblock.com:10005
-      --nodelogfile /home/bitcoin/.bitcoin/ocean_test/debug.log
-      --bidpubkey
-      --bidtxid
