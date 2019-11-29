@@ -4,7 +4,7 @@ services:
   guardnode:
     image: commerceblock/guardnode:latest
     volumes:
-      - ../ocean:/home/bitcoin/.bitcoin
+      - ../../ocean:/home/bitcoin/.bitcoin
     command: >-
       python3 -m guardnode
         --rpcuser ${OCEAN_RPC_USER:-ocean}
@@ -26,7 +26,7 @@ services:
       - "8332:8332"
       - "7042:7042"
     volumes:
-      - ../ocean:/home/bitcoin/.bitcoin
+      - ../../ocean:/home/bitcoin/.bitcoin
     command: >-
       oceand
         -printtoconsole

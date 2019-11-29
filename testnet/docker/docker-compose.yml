@@ -9,7 +9,7 @@ services:
       - "8332:8332"
       - "7042:7042"
     volumes:
-      - ./ocean:/home/bitcoin/.bitcoin
+      - ../ocean:/home/bitcoin/.bitcoin
     command: >-
       oceand
         -printtoconsole
