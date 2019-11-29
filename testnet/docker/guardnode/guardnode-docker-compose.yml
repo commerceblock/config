@@ -9,10 +9,10 @@ services:
       python3 -m guardnode
         --rpcuser ${OCEAN_RPC_USER:-ocean}
         --rpcpass ${OCEAN_RPC_PASSWORD:-oceanpass}
-        --rpchost node:8332
+        --rpchost ocean:8332
         --servicerpcuser ${OCEAN_RPC_USER:-ocean}
         --servicerpcpass ${OCEAN_RPC_PASSWORD:-oceanpass}
-        --servicerpchost node:8332
+        --servicerpchost ocean:8332
         --bidlimit 50
         --challengehost https://coordinator.testnet.commerceblock.com:10005
         --nodelogfile /home/bitcoin/.bitcoin/ocean_main/debug.log
