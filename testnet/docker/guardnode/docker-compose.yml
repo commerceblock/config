@@ -1,6 +1,23 @@
 ---
 version: '3.6'
 services:
+  guardnode:
+    image: commerceblock/guardnode:latest
+    volumes:
+      - ../../ocean:/home/bitcoin/.bitcoin
+    command: >-
+      python3 -m guardnode
+        --rpcuser ${OCEAN_RPC_USER:-ocean}
+        --rpcpass ${OCEAN_RPC_PASSWORD:-oceanpass}
+        --rpchost ocean:8332
+        --servicerpcuser ${OCEAN_RPC_USER:-ocean}
+        --servicerpcpass ${OCEAN_RPC_PASSWORD:-oceanpass}
+        --servicerpchost ocean:8332
+        --bidlimit 50
+        --challengehost https://coordinator.testnet.commerceblock.com:10005
+        --nodelogfile /home/bitcoin/.bitcoin/ocean_main/debug.log
+    depends_on:
+      - ocean
   ocean:
     image: commerceblock/ocean:dfd627dca
     networks:
@@ -9,7 +26,7 @@ services:
       - "8332:8332"
       - "7042:7042"
     volumes:
-      - ../ocean:/home/bitcoin/.bitcoin
+      - ../../ocean:/home/bitcoin/.bitcoin
     command: >-
       oceand
         -printtoconsole
@@ -17,6 +34,7 @@ services:
         -rpcuser=${OCEAN_RPC_USER:-ocean}
         -rpcpassword=${OCEAN_RPC_PASSWORD:-oceanpass}
         -rpcport=8332
+        -rpcallowip=0.0.0.0/0
         -addnode=testnet.commerceblock.com
         -txindex=1
         -listen=1

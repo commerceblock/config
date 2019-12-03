@@ -66,3 +66,19 @@ Interact with ocean node
 ```bash
 docker exec guardnode_ocean_1 ocean-cli -rpcport=8332 -rpcuser=ocean -rpcpassword=oceanpass help
 ```
+
+### Method 2 - binaries
+
+0. Download and install binaries from:
+https://github.com/commerceblock/ocean/releases
+https://github.com/commerceblock/guardnode/releases
+1. Clone this repo
+2. Start Ocean node
+```bash
+cd config/testnet/binaries
+./ocean.sh
+```
+3. Start Guardnode
+```bash
+./guardnode.sh
+```
