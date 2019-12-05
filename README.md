@@ -33,6 +33,20 @@ https://github.com/commerceblock/ocean/releases
 cd config/testnet/binaries
 ./ocean.sh
 ```
+### Method 3 - AWS
+
+0. Click any of the pre-set buttons to launch Ocean node in AWS.
+
+| AWS Region | Short name | |
+| -- | -- | -- |
+| US East (Ohio) | us-east-2 | [![cloudformation-launch-button](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=Ocean&templateURL=https://s3.eu-west-2.amazonaws.com/cb-awsocs/ocean-network.template.yaml) |	
+| US East (N. Virginia) | us-east-1 | [![cloudformation-launch-button](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=Ocean&templateURL=https://s3.eu-west-2.amazonaws.com/cb-awsocs/ocean-network.template.yaml) |	
+| US West (Oregon) | us-west-1 | [![cloudformation-launch-button](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=us-west-1#/stacks/new?stackName=Ocean&templateURL=https://s3.eu-west-2.amazonaws.com/cb-awsocs/ocean-network.template.yaml) |	
+| EU (London) | eu-west-2 | [![cloudformation-launch-button](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-2#/stacks/new?stackName=Ocean&templateURL=https://s3.eu-west-2.amazonaws.com/cb-awsocs/ocean-network.template.yaml) |	
+| EU (Ireland) | eu-west-1 | [![cloudformation-launch-button](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=Ocean&templateURL=https://s3.eu-west-2.amazonaws.com/cb-awsocs/ocean-network.template.yaml) |
+
+
+Or enter the following URL to CloudFormation new stack launch in your preferred region: https://s3.eu-west-2.amazonaws.com/cb-awsocs/ocean-network.template.yaml
 
 
 ## Ocean node with Guardnode
