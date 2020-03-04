@@ -12,7 +12,7 @@ git clone https://github.com/commerceblock/config
 ```
 2. Start Ocean node
 ```bash
-cd config/testnet/docker
+cd config/mainnet/docker
 docker-compose -p cbt up -d
 ```
 
@@ -31,7 +31,7 @@ docker exec cbt_ocean_1 ocean-cli -rpcport=8332 -rpcuser=ocean -rpcpassword=ocea
 1. Clone this repo
 2. Start Ocean node
 ```bash
-cd config/testnet/binaries
+cd config/mainnet/binaries
 ./ocean.sh
 ```
 ### Method 3 - AWS
@@ -65,7 +65,7 @@ git clone https://github.com/commerceblock/config
 ```
 2. Start Ocean node
 ```bash
-cd config/testnet/docker
+cd config/mainnet/docker
 sed -i 's/24e5a20d4/arm64/g' docker-compose.yml
 docker-compose -p cbt up -d
 ```
